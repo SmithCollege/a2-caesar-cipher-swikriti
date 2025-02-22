@@ -13,7 +13,6 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-
     - name: Dynamic Array Tests
       id: dynamic-array-tests
       uses: classroom-resources/autograding-command-grader@v1
