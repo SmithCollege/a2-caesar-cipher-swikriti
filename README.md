@@ -13,9 +13,14 @@ References Used:
 
 What was your favorite part of this assignment?
 Getting the green checks at the end. 
+<<<<<<< HEAD
 
 What was most challenging about this assignment?
 working with gitspace and gradle overall. Figuring out how tests work. 
+=======
+What was most challenging about this assignment?
+Figuring out what the assignment was in itself, and trying to see if 
+>>>>>>> refs/remotes/origin/main
 
 General comments on your experience with this assignment:
 Had a very hard time switching back and forth between things. 

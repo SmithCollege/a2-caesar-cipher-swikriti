@@ -43,16 +43,45 @@ public class CaesarCipher {
             index++;
         }
         return index;
+<<<<<<< HEAD
+=======
+
+       
+>>>>>>> refs/remotes/origin/main
     }
 
     /** Encode a message using the cipher
      * @param T message to encode
      * @return encoded message */  
+<<<<<<< HEAD
+=======
+    // public String encode(String message){
+    //     // Fill in here and update return statement based on your code
+    //     int position = 0;
+    //     int newPosition = 0; //for the index of the new letter that we get after offset is applied
+    //     char[] mArray = message.toCharArray();
+    //     for (int i = 0; i < message.length(); i++  ){
+
+    //         position = this.findIndex(mArray[i]); 
+    //         newPosition = position+offset;
+    //         if (newPosition>message.length()){
+    //             newPosition = (position+offset)%message.length();
+    //         }
+    //         mArray[i] = alphabet[newPosition];
+    //     }
+    //     return new String(mArray.toString()); 
+    //  }
+
+>>>>>>> refs/remotes/origin/main
      public String encode(String message){
         // Fill in here and update return statement based on your code
         char[] mArray = message.toLowerCase().toCharArray();
         for (int i = 0; i < message.length(); i++  ){
             if (Character.isAlphabetic(mArray[i])){
+<<<<<<< HEAD
+=======
+                System.out.println(cipher.get(this.findIndex(mArray[i]), offset) ) ;
+>>>>>>> refs/remotes/origin/main
                 mArray[i] = cipher.getencode(this.findIndex(mArray[i]), offset);
                 
             } else{
@@ -73,6 +102,10 @@ public class CaesarCipher {
         char[] mArray = message.toLowerCase().toCharArray();
         for (int i = 0; i < message.length(); i++  ){
             if (Character.isAlphabetic(mArray[i])){
+<<<<<<< HEAD
+=======
+                System.out.println(cipher.getdecode(this.findIndex(mArray[i]), offset) ) ;
+>>>>>>> refs/remotes/origin/main
                 mArray[i] = cipher.getdecode(this.findIndex(mArray[i]), offset);
                 
             } else{
@@ -82,6 +115,13 @@ public class CaesarCipher {
         System.out.println(new String(mArray));
         return new String(mArray); 
         
+<<<<<<< HEAD
+=======
+    }
+
+    public char get(int index){
+        return this.alphabet[(((index-offset)+alphabet.length)%alphabet.length)];
+>>>>>>> refs/remotes/origin/main
     }
 
     /**
