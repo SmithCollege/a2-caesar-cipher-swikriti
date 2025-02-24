@@ -43,36 +43,16 @@ public class CaesarCipher {
             index++;
         }
         return index;
-
-       
     }
 
     /** Encode a message using the cipher
      * @param T message to encode
      * @return encoded message */  
-    // public String encode(String message){
-    //     // Fill in here and update return statement based on your code
-    //     int position = 0;
-    //     int newPosition = 0; //for the index of the new letter that we get after offset is applied
-    //     char[] mArray = message.toCharArray();
-    //     for (int i = 0; i < message.length(); i++  ){
-
-    //         position = this.findIndex(mArray[i]); 
-    //         newPosition = position+offset;
-    //         if (newPosition>message.length()){
-    //             newPosition = (position+offset)%message.length();
-    //         }
-    //         mArray[i] = alphabet[newPosition];
-    //     }
-    //     return new String(mArray.toString()); 
-    //  }
-
      public String encode(String message){
         // Fill in here and update return statement based on your code
         char[] mArray = message.toLowerCase().toCharArray();
         for (int i = 0; i < message.length(); i++  ){
             if (Character.isAlphabetic(mArray[i])){
-                System.out.println(cipher.get(this.findIndex(mArray[i]), offset) ) ;
                 mArray[i] = cipher.getencode(this.findIndex(mArray[i]), offset);
                 
             } else{
@@ -93,7 +73,6 @@ public class CaesarCipher {
         char[] mArray = message.toLowerCase().toCharArray();
         for (int i = 0; i < message.length(); i++  ){
             if (Character.isAlphabetic(mArray[i])){
-                System.out.println(cipher.getdecode(this.findIndex(mArray[i]), offset) ) ;
                 mArray[i] = cipher.getdecode(this.findIndex(mArray[i]), offset);
                 
             } else{
@@ -105,10 +84,20 @@ public class CaesarCipher {
         
     }
 
+    /**
+     * Returns decoded characters by processing the offset
+     * @param index of the alphabet in the array
+     * @return decoded character
+     */
     public char get(int index){
         return this.alphabet[(((index-offset)+alphabet.length)%alphabet.length)];
     }
 
+
+    /**
+     * MAIN 
+     * @param args
+     */
     public static void main(String[] args) {
         CaesarCipher myCaesarCipher = new CaesarCipher(3);
         myCaesarCipher.encode("Hello");
